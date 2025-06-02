@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paquetes de Eventos</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Librerías necesarias -->
+  <!-- Toastify JS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="imagenes/logo.jpeg" alt="Casa Eventos Santana" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="PaquetesEvento.html">Paquetes de Eventos</a></li>
+        <li><a href="#">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Paquetes de Eventos</h1>
+
+  <!-- Contenedor de paquetes -->
+  <div class="container">
+    <div class="card">
+      <h3>Paquete Básico</h3>
+      <p>Incluye decoración sencilla y música ambiental.</p>
+      <p class="info">Precio: $100</p>
+      <button onclick="reservar('Paquete Básico', 100)">Reservar</button>
+    </div>
+    <div class="card">
+      <h3>Paquete Premium</h3>
+      <p>Decoración completa, música en vivo y cena.</p>
+      <p class="info">Precio: $300</p>
+      <button onclick="reservar('Paquete Premium', 300)">Reservar</button>
+    </div>
+    <div class="card">
+      <h3>Paquete VIP</h3>
+      <p>Todo incluido: comida gourmet, bar y espectáculo.</p>
+      <p class="info">Precio: $500</p>
+      <button onclick="reservar('Paquete VIP', 500)">Reservar</button>
+    </div>
+  </div>
+
+  <!-- Lista de reservas -->
+  <div class="reservas">
+    <h2>Eventos Reservados</h2>
+    <ul id="listaReservas">
+      <li><em>No hay reservas aún.</em></li>
+    </ul>
+  </div>
+
+  <!-- Script personalizado -->
+  <script src="script.js"></script>
+
+  <footer class="Home">
+    <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
+    <p>Política de privacidad | Términos y condiciones</p>
+    <p>Contacto: 2225-22347 | Email: CasaEvento@gmail.com</p>
+  </footer>
+</body>
+</html>
