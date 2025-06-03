@@ -1,54 +1,42 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #333;
-  }
-  
-  header {
-    background: #fdfaec;
-    padding: 5px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  header .logo img {
-    height: 100px;
-    width: 150px;
-    margin-left: 20px;
-    object-fit: cover;
- 
-  }
 
- 
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    margin-right: 20px;
-    padding: 0;
-   
-    
-   
-  }
-  
-  nav ul li {
-    margin: 0 10px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    
-  }
- 
-  nav ul li a:hover {
-   color: gold;
-    
-  }
+.logo-section {
+  background: #fdfaec;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo-section .logo img {
+  height: 100px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+.nav-bar {
+  background: #ccc;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-bar ul li a:hover {
+  color: gold;
+}
+
+
   
   .home {
     background: url('imagenes/home.jpeg') center/cover no-repeat;
