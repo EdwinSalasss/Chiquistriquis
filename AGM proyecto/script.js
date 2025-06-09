@@ -60,3 +60,34 @@ function eliminarReserva(boton) {
     }
   });
 }
+
+function openModal(event) {
+  event.preventDefault(); 
+  document.getElementById("loginModal").style.display = "block";
+}
+
+
+function closeModal() {
+  document.getElementById('loginModal').style.display = 'none';
+}
+
+function redirectToCreate() {
+  window.location.href = 'Gmail.html';
+}
+
+function nextStep(step) 
+{
+   
+  document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
+
+   
+    const next = document.getElementById('step' + step);
+    next.style.display = 'block';
+
+   
+    if (step === 3) {
+      setTimeout(() => {
+        window.location.href = "index.html"; 
+      }, 1000); 
+    }
+}
