@@ -81,13 +81,13 @@ function nextStep(step)
   document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
 
    
-    const next = document.getElementById('step' + step);
-    next.style.display = 'block';
+  const next = document.getElementById('step' + step);
+  next.style.display = 'block';
 
    
-    if (step === 3) {
+  if (step === 3) {
       setTimeout(() => {
         window.location.href = "index.html"; 
       }, 1000); 
-    }
+  }
 }
