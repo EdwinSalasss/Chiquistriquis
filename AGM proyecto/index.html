@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Eventos Santana</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
 </head>
 <body class="Home">
 
@@ -21,6 +22,12 @@
     <li><a href="#">Home</a></li>
     <li><a href="PaquetesEvento.html">Paquetes de Eventos</a></li>
     <li><a href="contactanos.html">Contáctanos</a></li>
+    <li>
+      <a href="#" onclick="openModal(event)">
+       <img src="imagenes/pngwing.com.png" class="login-icon" />
+         Iniciar sesión o crear cuenta
+      </a>
+      </li>
   </ul>
 </nav>
 
@@ -29,6 +36,21 @@
   <section class="home">
     <h1>Home</h1>
   </section>
+
+  <dialog id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Ahorra más por ser miembro</h2>
+      <div class="login-options">
+        <button class="google-btn">🔵 Google</button>
+        <button class="apple-btn">⚫ Apple</button>
+        <button class="facebook-btn">🔷 Facebook</button>
+      </div>
+      <hr />
+      <button class="main-login-btn" onclick="redirectToCreate()">Iniciar sesión o crear cuenta</button>
+      <p class="terms">Al crear una cuenta, aceptas nuestra <a href="#">política de privacidad</a> y nuestras <a href="#">condiciones de uso</a>.</p>
+    </div>
+  </dialog>
 
   <section class="quienes-somos">
     <div class="contenido">
@@ -57,11 +79,14 @@
     </div>
   </section>
 
+  <script src="script.js"></script>
+  
   <footer class="Home">
     <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
     <p>Política de privacidad | Términos y condiciones</p>
     <p>Contacto: 2225-22347 | Email: CasaEvento@gmail.com</p>
   </footer>
+
 
 </body>
 </html>
