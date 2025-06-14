@@ -118,83 +118,86 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 40px ;
+  padding: 40px;
 }
 
 .card {
-  background-color: #f2f2f2;
-  padding: 20px;
+  background-color: #fff;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.card img {
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-  width: 30%;
-  height: 30%;
+.card-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.text h3 {
+  color: #333;
+  font-size: 24px;
   margin-bottom: 10px;
-  border: 3px solid black;
- 
+}
+
+.text br {
+  font-size: 20px;
+  color: #444;
+  margin: 8px 0;
+
   
 }
 
-.card h3 {
-  margin-top: 10px;
-  color: #333;
-}
+.descripcion 
+{
+ margin: 0px;
 
-.card p {
-  font-size: 16px;
-  color: #666;
 }
 
 .info {
-font-weight: bold;
-  margin: 10px 0;
+  font-weight: bold;
+  color: #000;
+  margin-top: 10px;
 }
 
+.image {
+  flex: 1;
+  min-width: 250px;
+}
+
+.image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 3px solid #000;
+  border-radius: 10px;
+}
 
 .card button {
-  background-color: #fff59c;
+  background-color: #ff9900;
   color: white;
   border: none;
   padding: 10px 20px;
+  margin-top: 15px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  transition: background 0.3s;
 }
 
 .card button:hover {
-  background-color: #0056b3;
-}
-
-.reservas {
-  max-width: 800px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.reservas ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.reservas li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.reservas li:last-child {
-  border-bottom: none;
-}
-
-.info {
-  font-weight: bold;
-  margin: 15px 0;
+  background-color: #e68a00;
 }
 
 /*contactanos*/

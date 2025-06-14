@@ -61,32 +61,85 @@
 
   <!-- Contenedor de paquetes -->
   <div class="container">
-    <div class="card">
-      <img src="imagenes/paquete basico.jpeg" alt="Paquete Básico">
-      <h3>Paquete Básico</h3>
-      <p>Incluye decoración sencilla y música ambiental.</p>
-      <p class="info">Precio: $100</p>
-      <button onclick="reservar('Paquete Básico', 100)">Reservar</button>
-    </div>
-
-    <div class="card">
-      <img src="imagenes/paquete premium.jpeg" alt="Paquete Premium">
-      <h3>Paquete Premium</h3>
-       <p>Decoración completa, música en vivo y cena.</p>
-      <p class="info">Precio: $300</p>
-      <button onclick="reservar('Paquete Premium', 300)">Reservar</button>
-    </div>
-
-    <div class="card">
-      <img src="imagenes/paquete VIP.jpeg" alt="paquete vip">
-      <h3>Paquete VIP</h3>
-      <p>Todo incluido: comida gourmet, bar y espectáculo.</p>
-      <p class="info">Precio: $500</p>
-      <button onclick="reservar('Paquete VIP', 500)">Reservar</button>
+  <div class="card">
+    <div class="card-content">
+      <div class="text">
+        <h3>Paquete Básico</h3>
+        <section class="descripcion">
+          <ul>
+            <li> Coordinación total el día del evento,</li>
+            <li> Montaje de salón y decoración personalizada,</li>
+            <li> Iluminación ambiental LED,</li>
+            <li> DJ y maestro de ceremonias,</li>
+            <li> Menú de 3 tiempos con bebidas,</li>
+            <li> Pastel de ocasión personalizado,,</li>
+            <li> Meseros y servicio completo,</li>
+            <li> Mantelería y mobiliario premium,</li>
+            <li> Fotografía y video,</li>
+            <li> Brindis con copa conmemorativa para 100 personas.</li>
+          </ul>
+        </section>
+        <p class="info">Precio: $100</p>
+        <button onclick="location.href='reserva.html?paquete=Paquete%20Básico'">Reservar</button>
+      </div>
+      <div class="image">
+        <img src="imagenes/paquete basico.jpeg" alt="Paquete Básico">
+      </div>
     </div>
   </div>
 
-  <!-- Lista de reservas -->
+  <div class="card">
+    <div class="card-content reverse">
+      <div class="text">
+        <h3>Paquete Premium</h3>
+        <section class="descripcion">
+        <ul>
+        <li>Decoración completa del salón,</li>
+        <li>DJ profesional,</li>
+        <li>Montaje de mesa de honor,</li>
+        <li>Menú de 2 tiempos,</li>
+        <li>Pastel básico,</li>
+        <li>Iluminación sencilla,</li>
+        <li>Brindis básico,</li>
+        <li>Meseros y loza.</li>
+        <li>Decoración completa, música en vivo y cena.</li>
+        
+</ul>
+        </section>
+        <p class="info">Precio: $300</p>
+        <button onclick="location.href='reserva.html?paquete=Paquete%20Premium'">Reservar</button>
+      </div>
+      <div class="image">
+        <img src="imagenes/paquete premium.jpeg" alt="Paquete Premium">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <div class="text">
+        <h3>Paquete VIP</h3>
+        <section class="descripcion">
+          <ul>
+         <li>Renta de salón con 4 horas,</li>
+         <li>Decoración sencilla con globos o papel,</li>
+         <li>Mobiliario estándar (sillas y mesas),</li>
+         <li>Pastel sencillo,</li>
+         <li>Música ambiental automatizada,</li>
+         <li> Mantelería sencilla.</li>
+        </ul>
+        </section>
+        <p class="info">Precio: $500</p>
+        <button onclick="location.href='reserva.html?paquete=Paquete%20VIP'">Reservar</button>
+      </div>
+      <div class="image">
+        <img src="imagenes/paquete VIP.jpeg" alt="Paquete VIP">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Lista de reservas 
   <div class="reservas">
     <h2>Eventos Reservados</h2>
     <ul id="listaReservas">
@@ -94,8 +147,8 @@
     </ul>
   </div>
 
-  <!-- Script personalizado -->
-  <script src="script.js"></script>
+   Script personalizado 
+  <script src="script.js"></script> -->
 
   <footer class="Home">
     <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
