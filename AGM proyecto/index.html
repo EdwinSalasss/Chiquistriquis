@@ -1,92 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casa Eventos Santana</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style2.css" />
-</head>
-<body class="Home">
-
-  
-<section class="logo-section">
-  <div class="logo">
-    <img src="imagenes/logo.jpeg" alt="Casa Eventos Santana" />
-  </div>
-</section>
-
-
-<nav class="nav-bar">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="PaquetesEvento.html">Paquetes de Eventos</a></li>
-    <li><a href="contactanos.html">Contáctanos</a></li>
-    <li>
-      <a href="#" onclick="openModal(event)">
-       <img src="imagenes/pngwing.com.png" class="login-icon" />
-         Iniciar sesión o crear cuenta
-      </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <section class="home">
-    <h1>Home</h1>
-  </section>
-   <!-- Inicio de Sesion -->
-  <dialog id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Ahorra más por ser miembro</h2>
-      <div class="login-options">
-        <button class="google-btn">🔵 Google</button>
-        <button class="apple-btn">⚫ Apple</button>
-        <button class="facebook-btn">🔷 Facebook</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casa Eventos Santana</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="Home">
+    <section class="logo-section">
+      <div class="logo">
+        <img src="imagenes/logo.jpeg" alt="Casa Eventos Santana" />
       </div>
-      <hr />
-      <button class="main-login-btn" onclick="redirectToCreate()">Iniciar sesión o crear cuenta</button>
-      <p class="terms">Al crear una cuenta, aceptas nuestra <a href="#">política de privacidad</a> y nuestras <a href="#">condiciones de uso</a>.</p>
-    </div>
-  </dialog>
+    </section>
 
-  <section class="quienes-somos">
-    <div class="contenido">
-      <img src="imagenes/team.jpeg" alt="Equipo de trabajo" />
-      <div class="texto">
-        <h2>Quienes Somos</h2>
-        <p>
-          En Casa Eventos Santana, convertimos tus momentos especiales en experiencias inolvidables.
-          Ofrecemos un espacio elegante y versátil, ideal para bodas, fiestas, eventos corporativos y más.
-          Con un equipo comprometido y un servicio excepcional, nos encargamos de cada detalle para que disfrutes sin preocupaciones.
-        </p>
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <a href="#" class="active">
+            <img src="imagenes/Home.png" alt="Home" class="login-icon" />
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="PaquetesEvento.html">
+            <img src="imagenes/Evento.png" class="login-icon" />
+            Paquetes de Eventos
+          </a>
+        </li>
+        <li>
+          <a href="contactanos.html">
+            <img src="imagenes/Contacto.png" class="login-icon" />
+            Contáctanos
+          </a>
+        </li>
+        <li>
+          <a href="Sesion.html" id="login-nav-link">
+            <img src="imagenes/pngwing.com.png" class="login-icon" />
+            <span id="login-text">Iniciar sesión o crear cuenta</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        const loginText = document.getElementById("login-text");
+
+        if (loggedInUser) {
+          const fullName = loggedInUser.name;
+          const firstName = fullName.split(" ")[0];
+          loginText.textContent = firstName;
+        }
+      });
+    </script>
+
+    <section class="home">
+      <h1>Home</h1>
+    </section>
+
+    <section class="quienes-somos">
+      <div class="contenido">
+        <img src="imagenes/team.jpeg" alt="Equipo de trabajo" />
+        <div class="texto">
+          <h2>Quienes Somos</h2>
+          <p>
+            En Casa Eventos Santana, convertimos tus momentos especiales en
+            experiencias inolvidables. Ofrecemos un espacio elegante y versátil,
+            ideal para bodas, fiestas, eventos corporativos y más. Con un equipo
+            comprometido y un servicio excepcional, nos encargamos de cada
+            detalle para que disfrutes sin preocupaciones.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="eventos">
-    <h2>Nuestros Eventos</h2>
-    <div class="galeria">
-      <img src="imagenes/evento1.jpeg" alt="Evento 1" />
-      <img src="imagenes/evento2.jpeg" alt="Evento 2" />
-      <img src="imagenes/evento3.jpeg" alt="Evento 3" />
-      <img src="imagenes/evento4.jpeg" alt="Evento 4" />
-      <img src="imagenes/evento5.jpeg" alt="Evento 5" />
-      <img src="imagenes/evento6.jpeg" alt="Evento 6" />
-      
-    </div>
-  </section>
+    <section class="eventos">
+      <h2>Nuestros Eventos</h2>
+      <div class="galeria">
+        <img src="imagenes/evento1.jpeg" alt="Evento 1" />
+        <img src="imagenes/evento2.jpeg" alt="Evento 2" />
+        <img src="imagenes/evento3.jpeg" alt="Evento 3" />
+        <img src="imagenes/evento4.jpeg" alt="Evento 4" />
+        <img src="imagenes/evento5.jpeg" alt="Evento 5" />
+        <img src="imagenes/evento6.jpeg" alt="Evento 6" />
+      </div>
+    </section>
 
-  <script src="script.js"></script>
-  
-  <footer class="Home">
-    <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
-    <p>Política de privacidad | Términos y condiciones</p>
-    <p>Contacto: 2225-22347 | Email: CasaEvento@gmail.com</p>
-  </footer>
+    <script src="scriptSesion.js"></script>
 
-
-</body>
+    <footer class="Home">
+      <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
+      <p>Política de privacidad | Términos y condiciones</p>
+      <p>Contacto: 2225-22347 | Email: CasaEvento@gmail.com</p>
+    </footer>
+  </body>
 </html>

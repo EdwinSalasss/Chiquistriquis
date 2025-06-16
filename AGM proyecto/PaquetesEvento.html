@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paquetes de Eventos</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style2.css" />
+  
 
-  <!-- Librerías necesarias -->
-  <!-- Toastify JS -->
+  
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
@@ -22,41 +21,52 @@
     </div>
 </section>
 
-    <nav class="nav-bar">
+  <nav class="nav-bar">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="PaquetesEvento.html">Paquetes de Eventos</a></li>
-        <li><a href="contactanos.html">Contáctanos</a></li>
         <li>
-      <a href="#" onclick="openModal(event)">
-       <img src="imagenes/pngwing.com.png" class="login-icon" />
-         Iniciar sesión o crear cuenta
-      </a>
-      </li>
+          <a href="index.html" class="active">
+            <img src="imagenes/Home.png" alt="Home" class="login-icon" />
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="PaquetesEvento.html">
+            <img src="imagenes/Evento.png" class="login-icon" />
+            Paquetes de Eventos
+          </a>
+        </li>
+        <li>
+          <a href="contactanos.html">
+            <img src="imagenes/Contacto.png" class="login-icon" />
+            Contáctanos
+          </a>
+        </li>
+        <li>
+          <a href="Sesion.html" id="login-nav-link">
+            <img src="imagenes/pngwing.com.png" class="login-icon" />
+            <span id="login-text">Iniciar sesión o crear cuenta</span>
+          </a>
+        </li>
       </ul>
     </nav>
-  </header>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        const loginText = document.getElementById("login-text");
+
+        if (loggedInUser) {
+          const fullName = loggedInUser.name;
+          const firstName = fullName.split(" ")[0]; 
+          loginText.textContent = firstName;
+        }
+      });
+    </script>
 
 <section class="home">
     <h1>Paquete de eventos</h1>
   </section>
-  <!-- Inicio de Sesion -->
-  <dialog id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Ahorra más por ser miembro</h2>
-      <div class="login-options">
-        <button class="google-btn">🔵 Google</button>
-        <button class="apple-btn">⚫ Apple</button>
-        <button class="facebook-btn">🔷 Facebook</button>
-      </div>
-      <hr />
-      <button class="main-login-btn" onclick="redirectToCreate()">Iniciar sesión o crear cuenta</button>
-      <p class="terms">Al crear una cuenta, aceptas nuestra <a href="#">política de privacidad</a> y nuestras <a href="#">condiciones de uso</a>.</p>
-    </div>
-  </dialog>
-
+ 
   <h1>Paquetes de Eventos</h1>
 
   <!-- Contenedor de paquetes -->

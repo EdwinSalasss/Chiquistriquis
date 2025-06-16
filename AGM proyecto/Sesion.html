@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Eventos</title>
+    <link rel="stylesheet" href="styleISesion.css" />
+  </head>
+  <body>
+    <div class="login-container" id="login-container">
+      <button class="close-btn" id="close-btn">×</button>
+      <h2 id="title">Iniciar Sesión</h2>
+
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="login">Iniciar Sesión</button>
+        <button class="tab" data-tab="register">Crear Cuenta</button>
+      </div>
+
+      <!-- Formulario de Inicio de Sesión -->
+      <div class="tab-content active" id="login-tab">
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Correo Electrónico</label>
+            <input type="email" id="login-email" required />
+            <div class="error-message" id="login-email-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" required />
+            <div class="error-message" id="login-password-error"></div>
+          </div>
+
+          <button type="submit" class="btn">Iniciar Sesión</button>
+          <button type="button" class="btn btn-cancel" id="login-cancel">
+            Cancelar
+          </button>
+        </form>
+      </div>
+
+      <!-- Formulario de Registro -->-
+      <div class="tab-content" id="register-tab">
+        <form id="register-form">
+          <div class="form-group">
+            <label for="first-name">Primer Nombre</label>
+            <input type="text" id="first-name" maxlength="10" required />
+            <div class="error-message" id="first-name-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="second-name">Segundo Nombre</label>
+            <input type="text" id="second-name" maxlength="10" required />
+            <div class="error-message" id="second-name-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="first-lastname">Primer Apellido</label>
+            <input type="text" id="first-lastname" maxlength="10" required />
+            <div class="error-message" id="first-lastname-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="second-lastname">Segundo Apellido</label>
+            <input type="text" id="second-lastname" maxlength="10" required />
+            <div class="error-message" id="second-lastname-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="register-email">Correo Electrónico</label>
+            <input type="email" id="register-email" required />
+            <div class="error-message" id="register-email-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="register-password">Contraseña</label>
+            <input type="password" id="register-password" required />
+            <div class="error-message" id="register-password-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="register-confirm-password">Confirmar Contraseña</label>
+            <input type="password" id="register-confirm-password" required />
+            <div
+              class="error-message"
+              id="register-confirm-password-error"
+            ></div>
+          </div>
+
+          <button type="submit" class="btn">Registrarse</button>
+          <button type="button" class="btn btn-cancel" id="register-cancel">
+            Cancelar
+          </button>
+        </form>
+      </div>
+
+      <!-- Vista cuando el usuario está logueado -->
+      <div class="tab-content" id="logged-in-tab">
+        <div class="logged-in-container">
+          <h2>Bienvenido</h2>
+          <div class="user-info">
+            <p id="logged-in-user">Usuario</p>
+            <p id="logged-in-email">correo@ejemplo.com</p>
+          </div>
+          <button class="btn logout-btn" id="logout-btn">Cerrar Sesión</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="scriptSesion.js"></script>
+  </body>
+</html>
