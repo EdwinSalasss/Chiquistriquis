@@ -249,3 +249,7 @@ footer {
   padding: 8px 0;
   display: inline-block;
 }
+.nav-bar a.active {
+  color: #d4af37;
+  border-bottom: 2px solid #d4af37;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimedia - Casa Eventos Santana</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css"
+    />
+    <link rel="stylesheet" href="styleMultimedia.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="Home">
+    <section class="logo-section">
+      <div class="logo">
+        <img src="imagenes/logo.jpeg" alt="Casa Eventos Santana" />
+      </div>
+    </section>
+
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <a href="#" class="active">
+            <img src="imagenes/Home.png" alt="Home" class="login-icon" />
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="PaquetesEvento.html">
+            <img src="imagenes/Evento.png" class="login-icon" />
+            Paquetes de Eventos
+          </a>
+        </li>
+        <li>
+          <a href="contactanos.html">
+            <img src="imagenes/Contacto.png" class="login-icon" />
+            Contáctanos
+          </a>
+        </li>
+        <li>
+          <a href="Sesion.html" id="login-nav-link">
+            <img src="imagenes/pngwing.com.png" class="login-icon" />
+            <span id="login-text">Iniciar sesión o crear cuenta</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="multimedia-container">
+      <section class="hero-section animate__animated animate__fadeIn">
+        <h1>Nuestros Eventos en Imágenes</h1>
+        <p>
+          Descubre la magia de Casa Eventos Santana a través de nuestra galería
+        </p>
+      </section>
+
+      <section class="video-gallery">
+        <h2 class="section-title animate__animated animate__fadeInLeft">
+          Videos Destacados
+        </h2>
+        <div class="video-grid">
+          <div class="video-item animate__animated animate__zoomIn">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ejemplo1"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <h3>Boda de Ana y Carlos</h3>
+          </div>
+          <div
+            class="video-item animate__animated animate__zoomIn animate__delay-1s"
+          >
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ejemplo2"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <h3>Fiesta de 15 Años</h3>
+          </div>
+          <div
+            class="video-item animate__animated animate__zoomIn animate__delay-2s"
+          >
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ejemplo3"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <h3>Evento Corporativo</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="photo-gallery">
+        <h2 class="section-title animate__animated animate__fadeInRight">
+          Galería Fotográfica
+        </h2>
+        <div class="gallery-grid" id="lightgallery">
+          <a
+            href="imagenes/evento1.jpeg"
+            class="gallery-item animate__animated animate__fadeInUp"
+          >
+            <img src="imagenes/evento1.jpeg" alt="Evento 1" />
+            <div class="overlay">
+              <span>Ver más</span>
+            </div>
+          </a>
+          <a
+            href="imagenes/evento2.jpeg"
+            class="gallery-item animate__animated animate__fadeInUp animate__delay-1s"
+          >
+            <img src="imagenes/evento2.jpeg" alt="Evento 2" />
+            <div class="overlay">
+              <span>Ver más</span>
+            </div>
+          </a>
+          <a
+            href="imagenes/evento3.jpeg"
+            class="gallery-item animate__animated animate__fadeInUp animate__delay-2s"
+          >
+            <img src="imagenes/evento3.jpeg" alt="Evento 3" />
+            <div class="overlay">
+              <span>Ver más</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="testimonials animate__animated animate__fadeIn">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial">
+            <p>
+              "El lugar perfecto para nuestra boda. Las fotos quedaron
+              espectaculares!"
+            </p>
+            <cite>- María González</cite>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
+      <p>Política de privacidad | Términos y condiciones</p>
+      <p>Contacto: 2225-22347 | Email: CasaEvento@gmail.com</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="Multimedia.js"></script>
+  </body>
+</html>
