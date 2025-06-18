@@ -11,7 +11,7 @@
 
 .login-container h2 {
   margin-bottom: 20px;
-  color: #4a3f35;
+  color: #dcae2e;
   font-size: 24px;
 }
 
@@ -134,7 +134,7 @@
   text-align: center;
   position: relative;
   margin: 40px auto;
-  border: 2px solid #c3974f;
+  border: 2px solid #dcae2e;
 }
 
 /* Añade esto para los elementos del formulario */
@@ -164,7 +164,7 @@
 
 /* Botón con efecto dorado mejorado */
 .btn {
-  background: linear-gradient(to bottom, #c3974f, #b38947);
+  background: linear-gradient(to bottom, #dcae2e, #b38947);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -175,7 +175,7 @@
   margin-right: 10px;
   transition: all 0.3s;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid #a67c00;
+  border: 1px solid #dcae2e;
 }
 
 .btn:hover {
@@ -199,5 +199,5 @@
   left: 25%;
   width: 50%;
   height: 2px;
-  background: linear-gradient(to right, transparent, #c3974f, transparent);
+  background: linear-gradient(to right, transparent, #dcae2e, transparent);
 }

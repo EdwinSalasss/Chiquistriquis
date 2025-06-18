@@ -61,7 +61,7 @@
 
     <section class="quienes-somos">
       <div class="contenido">
-        <img src="imagenes/team.jpeg" alt="Equipo de trabajo" />
+        <img src="imagenes/Nosotros.png" alt="Equipo de trabajo" />
         <div class="texto">
           <h2>Quienes Somos</h2>
           <p>
@@ -77,22 +77,54 @@
 
     <section class="eventos">
       <h2>Nuestros Eventos</h2>
-      <div class="galeria">
-        <img src="imagenes/evento1.jpeg" alt="Evento 1" />
-        <img src="imagenes/evento2.jpeg" alt="Evento 2" />
-        <img src="imagenes/evento3.jpeg" alt="Evento 3" />
-        <img src="imagenes/evento4.jpeg" alt="Evento 4" />
-        <img src="imagenes/evento5.jpeg" alt="Evento 5" />
-        <img src="imagenes/evento6.jpeg" alt="Evento 6" />
+      <a href="Multimedia.html">
+        <button>Ver mas</button>
+      </a>
+
+      <div class="simple-gallery">
+        <div class="gallery-item">
+          <img src="imagenes/evento1.jpeg" alt="Evento 1" data-index="0" />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/evento2.jpeg" alt="Evento 2" data-index="1" />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/evento3.jpeg" alt="Evento 3" data-index="2" />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/evento4.jpeg" alt="Evento 4" data-index="3" />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/evento5.jpeg" alt="Evento 5" data-index="4" />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/evento6.jpeg" alt="Evento 6" data-index="5" />
+        </div>
+      </div>
+
+      <!-- Fullscreen Gallery -->
+      <div class="fullscreen-gallery" style="display: none">
+        <button class="close-gallery">×</button>
+        <button class="nav-btn prev-btn">‹</button>
+        <div class="fullscreen-content">
+          <img src="" alt="" class="fullscreen-img" />
+          <div class="image-counter"></div>
+        </div>
+        <button class="nav-btn next-btn">›</button>
       </div>
     </section>
-
-    <script src="scriptSesion.js"></script>
 
     <footer class="Home">
       <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
       <p>Política de privacidad | Términos y condiciones</p>
       <p>Contacto: 2225-22347 | Email: CasaEvento@gmail.com</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <script src="scriptSesion.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

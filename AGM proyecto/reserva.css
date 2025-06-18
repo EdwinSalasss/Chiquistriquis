@@ -1,11 +1,11 @@
 /* reserva.css */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fdf9f0;
   margin: 0;
   padding: 0;
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -16,7 +16,7 @@ body {
   padding: 40px;
   max-width: 500px;
   width: 90%;
-  margin: 40px auto; 
+  margin: 40px auto;
   flex: 1;
 }
 
@@ -47,7 +47,8 @@ label {
   font-weight: 600;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -88,9 +89,9 @@ button:hover {
 }
 
 footer {
-    background: #1b0f00;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
+  background: #1b0f00;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
 }
