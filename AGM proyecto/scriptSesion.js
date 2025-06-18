@@ -204,10 +204,20 @@ document.addEventListener("DOMContentLoaded", function () {
   function showLoggedInView(user) {
     tabs.forEach((t) => t.classList.remove("active"));
     tabContents.forEach((c) => c.classList.remove("active"));
-    document.getElementById("logged-in-tab").classList.add("active");
+
+    const loggedInTab = document.getElementById("logged-in-tab");
+    if (loggedInTab) {
+      loggedInTab.classList.add("active");
+    } else {
+      console.warn('Elemento con id "logged-in-tab" encontrado.');
+    }
+
     title.textContent = `Bienvenido, ${user.name}`;
-    document.getElementById("logged-in-user").textContent = user.name;
-    document.getElementById("logged-in-email").textContent = user.email;
+    const userNameEl = document.getElementById("logged-in-user");
+    const userEmailEl = document.getElementById("logged-in-email");
+
+    if (userNameEl) userNameEl.textContent = user.name;
+    if (userEmailEl) userEmailEl.textContent = user.email;
   }
 
   // Mostrar mensajes de error

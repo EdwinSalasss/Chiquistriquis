@@ -8,10 +8,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css"
-    />
     <link rel="stylesheet" href="styleMultimedia.css" />
   </head>
   <body class="Home">
@@ -36,7 +32,7 @@
         <h2 class="section-title animate__animated animate__fadeInLeft">
           Videos Destacados
         </h2>
-          
+
         <div class="video-grid">
           <div class="video-item animate__animated animate__zoomIn">
             <div class="video-wrapper">
@@ -80,35 +76,31 @@
         <h2 class="section-title animate__animated animate__fadeInRight">
           Galería Fotográfica
         </h2>
-        <div class="gallery-grid" id="lightgallery">
-          <a
-            href="imagenes/evento1.jpeg"
-            class="gallery-item animate__animated animate__fadeInUp"
-          >
-            <img src="imagenes/evento1.jpeg" alt="Evento 1" />
+        <div class="gallery-grid">
+          <div class="gallery-item animate__animated animate__fadeInUp">
+            <img src="imagenes/evento1.jpeg" alt="Evento 1" data-index="0" />
             <div class="overlay">
               <span>Ver más</span>
             </div>
-          </a>
-          <a
-            href="imagenes/evento2.jpeg"
+          </div>
+          <div
             class="gallery-item animate__animated animate__fadeInUp animate__delay-1s"
           >
-            <img src="imagenes/evento2.jpeg" alt="Evento 2" />
+            <img src="imagenes/evento2.jpeg" alt="Evento 2" data-index="1" />
             <div class="overlay">
               <span>Ver más</span>
             </div>
-          </a>
-          <a
-            href="imagenes/evento3.jpeg"
+          </div>
+          <div
             class="gallery-item animate__animated animate__fadeInUp animate__delay-2s"
           >
-            <img src="imagenes/evento3.jpeg" alt="Evento 3" />
+            <img src="imagenes/evento3.jpeg" alt="Evento 3" data-index="2" />
             <div class="overlay">
               <span>Ver más</span>
             </div>
-          </a>
+          </div>
         </div>
+      </section>
 
       <section class="testimonials animate__animated animate__fadeIn">
         <h2>Lo que dicen nuestros clientes</h2>
@@ -124,6 +116,17 @@
       </section>
     </main>
 
+    <!-- Galería a pantalla completa -->
+    <div class="fullscreen-gallery" style="display: none">
+      <span class="close-gallery">&times;</span>
+      <button class="prev-btn">&#10094;</button>
+      <button class="next-btn">&#10095;</button>
+      <div class="fullscreen-content">
+        <img class="fullscreen-img" src="" alt="" />
+        <div class="image-counter"></div>
+      </div>
+    </div>
+
     <footer class="footer">
       <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
       <p>Política de privacidad | Términos y condiciones</p>
@@ -131,7 +134,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="Multimedia.js"></script>
   </body>
