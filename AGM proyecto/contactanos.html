@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paquetes de Eventos</title>
-  <link rel="stylesheet" href="style.css" />
- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paquetes de Eventos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body class="Home">
+    <section class="logo-section">
+      <div class="logo">
+        <img src="imagenes/logo.jpeg" alt="Casa Eventos Santana" />
+      </div>
+    </section>
 
-</head>
-<body>
-
-  <section class="logo-section">
-  <header>
-    <div class="logo">
-      <img src="imagenes/logo.jpeg" alt="Casa Eventos Santana" />
-    </div>
-</section>
-
-  <nav class="nav-bar">
+    <nav class="nav-bar">
       <ul>
         <li>
           <a href="index.html">
@@ -27,7 +23,7 @@
           </a>
         </li>
         <li>
-          <a href="PaquetesEvento.html" >
+          <a href="PaquetesEvento.html">
             <img src="imagenes/Evento.png" class="login-icon" />
             Paquetes de Eventos
           </a>
@@ -53,45 +49,56 @@
         const loginText = document.getElementById("login-text");
 
         if (loggedInUser) {
-          
           const fullName = loggedInUser.name;
-          const firstName = fullName.split(" ")[0]; 
+          const firstName = fullName.split(" ")[0];
           loginText.textContent = firstName;
         }
       });
     </script>
+    <section class="home">
+      <h1>Contactanos</h1>
+    </section>
+    <section class="contacto">
+      <div class="info">
+        <h2>Dirección</h2>
+        <p>
+          Altos de Santo Domingo del Obelisco 1 1/2 cuadra al norte,<br />Managua,
+          Nicaragua
+        </p>
 
+        <h2>Teléfono</h2>
+        <p><strong>89679676 / 84909073</strong></p>
 
-  <section class="contacto">
-    <div class="info">
-      <h2>Dirección</h2>
-      <p>Altos de Santo Domingo del Obelisco 1 1/2 cuadra al norte,<br>Managua, Nicaragua</p>
+        <h2>Correo</h2>
+        <p>CasaEvento@gmail.com</p>
 
-      <h2>Teléfono</h2>
-      <p><strong>89679676 / 84909073</strong></p>
-
-      <h2>Correo</h2>
-      <p>CasaEvento@gmail.com</p>
-
-      <div class="social">
-        <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="imagenes/whatsapp.png" alt="WhatsApp"></a>
+        <div class="social">
+          <a href="#"><img src="imagenes/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="imagenes/instagram.png" alt="Instagram" /></a>
+          <a href="#"><img src="imagenes/whatsapp.png" alt="WhatsApp" /></a>
+        </div>
       </div>
-    </div>
 
-    <div class="mapa">
-      <img src="imagenes/mapa de casa evento.png" alt="Mapa de ubicación">
-    </div>
-  </section>
+      <div class="mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.383342986127!2d-86.2473841251741!3d12.085888088154046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f73ff6908b0429d%3A0x44e4d618906b200f!2sCasa%20Eventos%20Santana!5e0!3m2!1ses-419!2sni!4v1750663264350!5m2!1ses-419!2sni"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          alt="Mapa de ubicación"
+        ></iframe>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
-    <p>Contacto: 2255-2243 | Email: CasaEvento@gmail.com</p>
-  </footer>
-   
-  <script src="scriptSesion.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
+      <p>Contacto: 2255-2243 | Email: CasaEvento@gmail.com</p>
+    </footer>
 
-</body>
+    <script src="scriptSesion.js"></script>
+  </body>
 </html>
