@@ -342,7 +342,7 @@ body {
   transform: translateY(-5px);
 }
 
-/* Galería a pantalla completa - Actualizado para coincidir con style.css */
+/* Galería a pantalla completa  */
 .fullscreen-gallery {
   position: fixed;
   top: 0;

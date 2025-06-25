@@ -70,4 +70,15 @@ document.addEventListener("DOMContentLoaded", function () {
     currentIndex = (currentIndex + 1) % images.length;
     updateFullscreenImage();
   }
+  // Efecto hover para los botones sociales
+});
+const socialLinks = document.querySelectorAll(".social-links a");
+socialLinks.forEach((link) => {
+  link.addEventListener("mouseenter", function () {
+    this.classList.add("animate__animated", "animate__rubberBand");
+  });
+
+  link.addEventListener("mouseleave", function () {
+    this.classList.remove("animate__animated", "animate__rubberBand");
+  });
 });

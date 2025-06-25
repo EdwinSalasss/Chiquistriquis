@@ -86,16 +86,14 @@ li {
   background-color: #a67c00;
 }
 
-/* Pie de página */
-.pie-pagina {
-  background-color: #1b0f00;
+footer {
+  background-color: #222;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
   font-size: 0.9rem;
 }
-
 /* Enlaces */
 a {
   color: #c3974f;
