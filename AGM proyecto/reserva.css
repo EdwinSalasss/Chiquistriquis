@@ -14,8 +14,8 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 40px;
-  max-width: 500px;
-  width: 90%;
+  max-width: 600px;
+  width: 95%;
   margin: 40px auto;
   flex: 1;
 }
@@ -28,6 +28,7 @@ body {
 .logo-container img {
   max-width: 120px;
   height: auto;
+  border-radius: 10px;
 }
 
 h2 {
@@ -48,15 +49,90 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+select {
+  background-color: #fff;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.radio-group label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-type-options {
+  display: flex;
+  gap: 15px;
+  margin: 10px 0 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-type-options label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.card-type-options input[type="radio"] {
+  display: none;
+}
+
+.card-type-options img {
+  width: 60px;
+  height: auto;
+  margin-top: 5px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.card-type-options input[type="radio"]:checked + img {
+  filter: none;
+  transform: scale(1.1);
+}
+
+.card-type-options label:hover {
+  border-color: #b38947;
+}
+
+.payment-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fef9e7;
+  border: 1px solid #f4c542;
+  border-radius: 10px;
+}
+
+.payment-section legend {
+  font-weight: bold;
+  color: #5a3e1b;
+  margin-bottom: 10px;
 }
 
 button {
-  background-color: #f4c542;
+  background: linear-gradient(to bottom, #dcae2e, #b38947);
   color: #fff;
   padding: 12px;
   border: none;
@@ -64,28 +140,28 @@ button {
   margin-top: 20px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+
 }
 
 button:hover {
-  background-color: #dcae2e;
+  background: linear-gradient(to bottom, #b38947, #a67c00);
 }
 
 .back-button {
   display: inline-block;
   margin-top: 20px;
-  background-color: #f4c542;
+  background: linear-gradient(to bottom, #dcae2e, #b38947);
   color: white;
   padding: 10px 15px;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
   text-align: center;
-  transition: background-color 0.3s ease;
+
 }
 
 .back-button:hover {
-  background-color: #dcae2e;
+  background: linear-gradient(to bottom, #b38947, #a67c00);
 }
 
 footer {

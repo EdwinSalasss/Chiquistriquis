@@ -201,3 +201,19 @@
   height: 2px;
   background: linear-gradient(to right, transparent, #dcae2e, transparent);
 }
+
+.btn-historial {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #dcae2e, #b38947);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  
+}
+
+.btn-historial:hover {
+  background: linear-gradient(to bottom, #b38947, #a67c00);
+}

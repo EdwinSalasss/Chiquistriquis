@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Historial de Reservas</title>
+  <link rel="stylesheet" href="historial.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Historial de Reservas</h2>
+    <ul id="listaHistorial"></ul>
+    <a href="index.html" class="back-button">← Volver al inicio</a>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user) {
+      alert("Debe iniciar sesión para ver su historial.");
+      window.location.href = "Sesion.html";
+    } else {
+      const historialKey = `reservas_${user.email}`;
+      const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
+      const lista = document.getElementById("listaHistorial");
+
+      if (historial.length === 0) {
+        lista.innerHTML = "<li>No hay reservas registradas.</li>";
+      } else {
+
+        historial.forEach(reserva => {
+          const item = document.createElement("li");
+          const metodoPago = reserva.metodoPago === "paypal"
+         ? "PayPal"
+         : reserva.metodoPago === "tarjeta"
+         ? `Tarjeta de Crédito (${reserva.tipoTarjeta || "No especificada"})`
+      : "No especificado";
+
+          item.innerHTML = `
+            <strong>Paquete:</strong> ${reserva.paquete} <br>
+            <strong>Fecha:</strong> ${reserva.fecha} a las ${reserva.hora || "Hora no especificada"}<br>
+            <strong>Nombre:</strong> ${reserva.nombre}<br>
+            <strong>Correo:</strong> ${reserva.correo}<br>
+            <strong>Teléfono:</strong> ${reserva.telefono}<br>
+            <strong>Cantidad de invitados:</strong> ${reserva.cantidadInvitados || "No especificado"}<br>
+            <strong>Método de Pago:</strong> ${metodoPago}<br>
+            <strong>Mensaje:</strong> ${reserva.mensaje || "N/A"}<br>
+            <hr>`;
+          lista.appendChild(item);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

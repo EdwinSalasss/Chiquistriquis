@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf9f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  color: #6c4c1b;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.estrellas span {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.estrellas .seleccionada {
+  color: #f4c542;
+}
+
+.estrellas-leidas {
+  color: #f4c542;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.valoracion {
+  border: 1px solid #f4c542;
+  border-radius: 8px;
+  background-color: #fffde7;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+
+button {
+  background: linear-gradient(to bottom, #dcae2e, #b38947);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #b38947, #a67c00);
+}
+
+.back-button {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  background: #6c4c1b;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #4a300e;
+}

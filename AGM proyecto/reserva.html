@@ -14,29 +14,73 @@
     </div>
 
 
-  <div class="form-section">
+  <div>
     <h2>Reserva tu Evento</h2>
-    <form action="#" method="post">
-      <label for="paquete">Paquete Seleccionado:</label>
-      <input type="text" id="paquete" name="paquete" readonly>
+  <form action="#" method="post" id="form-reserva">
+  <label for="paquete">Paquete Seleccionado:</label>
+  <input type="text" id="paquete" name="paquete" readonly>
 
-      <label for="nombre">Nombre Completo:</label>
-      <input type="text" id="nombre" name="nombre" required>
+  <label for="nombre">Nombre Completo:</label>
+  <input type="text" id="nombre" name="nombre" required>
 
-      <label for="correo">Correo Electrónico:</label>
-      <input type="email" id="correo" name="correo" required>
+  <label for="correo">Correo Electrónico:</label>
+  <input type="email" id="correo" name="correo" required>
 
-      <label for="telefono">Teléfono:</label>
-      <input type="tel" id="telefono" name="telefono" required>
+  <label for="telefono">Teléfono:</label>
+  <input type="tel" id="telefono" name="telefono" required>
 
-      <label for="fecha">Fecha del Evento:</label>
-      <input type="date" id="fecha" name="fecha" required>
+  <label for="fecha">Fecha del Evento (mínimo 3 días después de hoy):</label>
+  <input type="date" id="fecha" name="fecha" required>
 
-      <label for="mensaje">Mensaje Adicional:</label>
-      <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+  <label for="hora">Hora del Evento:</label>
+  <input type="time" id="hora" name="hora" required>
 
-      <button type="submit">Enviar Reserva</button>
-    </form>
+  <label for="invitados">Cantidad de Invitados (Máx: 100):</label>
+  <input type="number" id="invitados" name="invitados" min="1" max="100" required>
+
+  <label for="mensaje">Mensaje Adicional:</label>
+  <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+  <label for="metodoPago">Método de Pago:</label>
+  <select id="metodoPago" name="metodoPago" required>
+    <option value="">Seleccione un método</option>
+    <option value="paypal">PayPal</option>
+    <option value="tarjeta">Tarjeta de Crédito</option>
+  </select>
+
+  <div id="datosTarjeta" style="display: none;">
+
+    <label for="tipoTarjeta">Tipo de Tarjeta:</label>
+<div class="card-type-options">
+  <label>
+    <input type="radio" name="tipoTarjeta" value="Visa" required>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+  </label>
+
+  <label>
+    <input type="radio" name="tipoTarjeta" value="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+  </label>
+
+  <label>
+    <input type="radio" name="tipoTarjeta" value="American Express">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="Amex">
+  </label>
+</div>
+
+    <label for="numeroTarjeta">Número de Tarjeta:</label>
+    <input type="text" id="numeroTarjeta" maxlength="16" placeholder="1234 5678 9012 3456">
+
+    <label for="vencimiento">Fecha de Vencimiento:</label>
+    <input type="month" id="vencimiento">
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" maxlength="4" placeholder="123">
+  </div>
+
+  <button type="submit">Enviar Reserva</button>
+</form>
+
 
      <a href="PaquetesEvento.html" class="back-button">← Volver</a>
   

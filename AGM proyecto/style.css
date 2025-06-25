@@ -163,6 +163,25 @@ footer {
   background-color: #e68a00;
 }
 
+.valoraciones-link {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+.valoraciones-link a {
+  font-size: 16px;
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.valoraciones-link a:hover {
+  color: #272624;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+}
+
 /*contactanos*/
 
 .contacto {
