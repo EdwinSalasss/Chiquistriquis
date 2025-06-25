@@ -174,13 +174,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const returnUrl = localStorage.getItem("returnUrl");
   
   // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
-  if (returnUrl && returnUrl.includes("reserva.html")) 
-    {
-    localStorage.removeItem("returnUrl");
-    window.location.href = "index.html";
-  } else {
-    window.location.href = returnUrl || document.referrer || "index.html";
-  }
+  if (
+  returnUrl &&
+  (returnUrl.includes("reserva.html") || returnUrl.includes("valoraciones.html") || returnUrl.includes("historial.html"))
+) {
+  localStorage.removeItem("returnUrl");
+  window.location.href = "index.html";
+} else {
+  window.location.href = returnUrl || document.referrer || "index.html";
+}
 });
 
 
@@ -188,12 +190,15 @@ document.addEventListener("DOMContentLoaded", function () {
    const returnUrl = localStorage.getItem("returnUrl");
   
   // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
-  if (returnUrl && returnUrl.includes("reserva.html")) {
-    localStorage.removeItem("returnUrl");
-    window.location.href = "index.html";
-  } else {
-    window.location.href = returnUrl || document.referrer || "index.html";
-  }
+ if (
+  returnUrl &&
+  (returnUrl.includes("reserva.html") || returnUrl.includes("valoraciones.html") || returnUrl.includes("historial.html"))
+) {
+  localStorage.removeItem("returnUrl");
+  window.location.href = "index.html";
+} else {
+  window.location.href = returnUrl || document.referrer || "index.html";
+}
 });
 
   // Botón de cerrar sesión
@@ -206,8 +211,18 @@ document.addEventListener("DOMContentLoaded", function () {
     title.textContent = "Iniciar Sesión";
     loginForm.reset();
     registerForm.reset();
-    const returnUrl = localStorage.getItem("returnUrl") || "index.html";
-    window.location.href = returnUrl;
+    
+    //para que no lleve a paginas protegidas
+  if (
+  returnUrl.includes("reserva.html") ||
+  returnUrl.includes("valoraciones.html")||
+  returnUrl.includes("historial.html")
+) {
+  returnUrl = "index.html";
+}
+
+localStorage.removeItem("returnUrl");
+window.location.href = returnUrl;
   });
 
   // Botón de cerrar (×)
@@ -215,13 +230,15 @@ document.addEventListener("DOMContentLoaded", function () {
      returnUrl = localStorage.getItem("returnUrl");
   
   // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
-  if (returnUrl && returnUrl.includes("reserva.html")) 
-    {
-    localStorage.removeItem("returnUrl");
-    window.location.href = "index.html";
-  } else {
-    window.location.href = returnUrl || document.referrer || "index.html";
-  }
+  if (
+  returnUrl &&
+  (returnUrl.includes("reserva.html") || returnUrl.includes("valoraciones.html") || returnUrl.includes("historial.html"))
+) {
+  localStorage.removeItem("returnUrl");
+  window.location.href = "index.html";
+} else {
+  window.location.href = returnUrl || document.referrer || "index.html";
+}
   });
 
   // Mostrar vista de usuario logueado

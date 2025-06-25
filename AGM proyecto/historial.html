@@ -42,8 +42,11 @@
             <strong>Teléfono:</strong> ${reserva.telefono}<br>
             <strong>Cantidad de invitados:</strong> ${reserva.cantidadInvitados || "No especificado"}<br>
             <strong>Método de Pago:</strong> ${metodoPago}<br>
+         ${reserva.metodoPago === "paypal" && reserva.paypalCorreo
+          ? `<strong>Correo PayPal:</strong> ${reserva.paypalCorreo}<br>`
+    : ""}
             <strong>Mensaje:</strong> ${reserva.mensaje || "N/A"}<br>
-            <hr>`;
+                        <hr>`;
           lista.appendChild(item);
         });
       }

@@ -32,12 +32,58 @@ fechaInput.min = `${yyyy}-${mm}-${dd}`;
 // Mostrar u ocultar los datos de la tarjeta según método seleccionado
 const metodoPago = document.getElementById("metodoPago");
 const datosTarjeta = document.getElementById("datosTarjeta");
+const datosPaypal = document.getElementById("datosPaypal");
 
 metodoPago.addEventListener("change", () => {
+  const datosTarjeta = document.getElementById("datosTarjeta");
+  const datosPaypal = document.getElementById("datosPaypal");
+
+  const tipoTarjetas = document.querySelectorAll('input[name="tipoTarjeta"]');
+  const numeroTarjeta = document.getElementById("numeroTarjeta");
+  const vencimiento = document.getElementById("vencimiento");
+  const cvv = document.getElementById("cvv");
+
+  const paypalCorreo = document.getElementById("paypalCorreo");
+  const paypalPassword = document.getElementById("paypalPassword");
+
   if (metodoPago.value === "tarjeta") {
     datosTarjeta.style.display = "block";
-  } else {
+    datosPaypal.style.display = "none";
+
+    // Activar requeridos para tarjeta
+    tipoTarjetas.forEach(r => r.required = true);
+    numeroTarjeta.required = true;
+    vencimiento.required = true;
+    cvv.required = true;
+
+    // Quitar requeridos de PayPal
+    paypalCorreo.required = false;
+    paypalPassword.required = false;
+  } else if (metodoPago.value === "paypal") {
     datosTarjeta.style.display = "none";
+    datosPaypal.style.display = "block";
+
+    // Activar requeridos para PayPal
+    paypalCorreo.required = true;
+    paypalPassword.required = true;
+
+    // Quitar requeridos de tarjeta
+    tipoTarjetas.forEach(r => r.required = false);
+    numeroTarjeta.required = false;
+    vencimiento.required = false;
+    cvv.required = false;
+  } else {
+    // Quitar todos los requeridos si no hay método seleccionado
+    tipoTarjetas.forEach(r => r.required = false);
+    numeroTarjeta.required = false;
+    vencimiento.required = false;
+    cvv.required = false;
+
+    paypalCorreo.required = false;
+    paypalPassword.required = false;
+
+    datosTarjeta.style.display = "none";
+    datosPaypal.style.display = "none";
   }
 });
 
@@ -51,122 +97,117 @@ telefonoInput.addEventListener("input", () => {
 const formulario = document.querySelector("form");
 
 formulario.addEventListener("submit", function (e) {
-  e.preventDefault();// para evitar que se envie 
-  const fechaSeleccionada = new Date(fechaInput.value);
+  e.preventDefault(); // Detiene el envío por defecto
 
-  // Validar que el año no sea anterior al actual
-  const añoSeleccionado = fechaSeleccionada.getFullYear();
+const fechaSeleccionada = new Date(fechaInput.value);
+const añoSeleccionado = fechaSeleccionada.getFullYear();
+
   if (añoSeleccionado < hoy.getFullYear()) {
-    e.preventDefault();
-    alert("No se permite seleccionar años anteriores al actual.");
-    return;
+  alert("No se permite seleccionar años anteriores al actual.");
+  return;
   }
 
-
-  // Validar invitados
+// Validar invitados
   const invitadosInput = document.getElementById("invitados");
   const cantidad = parseInt(invitadosInput.value, 10);
   if (isNaN(cantidad) || cantidad < 1 || cantidad > 100) {
-    e.preventDefault();
-    alert("La cantidad de invitados debe ser entre 1 y 100.");
+  alert("La cantidad de invitados debe ser entre 1 y 100.");
     return;
   }
 
-  // Validar hora entre 08:00 y 22:00
+  // Validar hora
   const horaInput = document.getElementById("hora");
   const horaSeleccionada = horaInput.value;
   if (!horaSeleccionada) {
-    e.preventDefault();
-    alert("Por favor selecciona una hora para el evento.");
+  alert("Por favor selecciona una hora para el evento.");
     return;
   }
 
   const [horas, minutos] = horaSeleccionada.split(":").map(Number);
   const totalMinutos = horas * 60 + minutos;
-
-  const inicioPermitido = 8 * 60;   // 08:00 en minutos
-  const finPermitido = 22 * 60;    // 10:00 en minutos
-
-  if (totalMinutos < inicioPermitido || totalMinutos > finPermitido) {
-    e.preventDefault();
+  if (totalMinutos < 480 || totalMinutos > 1320) {
     alert("La hora del evento debe estar entre las 08:00AM y las 10:00PM.");
     return;
   }
 
   // Validar método de pago
-  const metodop = metodoPago.value;
-  if (!metodop) {
-    e.preventDefault();
+  const metodo = metodoPago.value;
+  if (!metodo) {
     alert("Por favor selecciona un método de pago.");
     return;
   }
 
-  if (metodop === "tarjeta") {
+   //si selecciona el metodo paypal
+   if (metodo === "paypal") {
+     const paypalCorreo = document.getElementById("paypalCorreo").value.trim();
+     const paypalPassword = document.getElementById("paypalPassword").value.trim();
+
+     const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(paypalCorreo);
+      if (!correoValido) 
+        {
+      alert("Por favor ingrese un correo de PayPal válido.");
+       return;
+      }
+
+      if (paypalPassword.length < 6) {
+      alert("La contraseña de PayPal debe tener al menos 6 caracteres.");
+     return;
+     }
+   }
+
+ let tipoTarjeta = "";
+  if (metodo === "tarjeta") {
+    tipoTarjeta = document.querySelector('input[name="tipoTarjeta"]:checked')?.value;
     const numeroTarjeta = document.getElementById("numeroTarjeta").value.trim();
     const vencimiento = document.getElementById("vencimiento").value;
     const cvv = document.getElementById("cvv").value.trim();
 
-    const tarjetaValida = /^\d{16}$/.test(numeroTarjeta);
-    const cvvValido = /^\d{3,4}$/.test(cvv);
+    if (!tipoTarjeta) {
+      alert("Por favor seleccione el tipo de tarjeta.");
+      return;
+    }
 
-    if (!tarjetaValida) {
-      e.preventDefault();
+    if (!/^\d{16}$/.test(numeroTarjeta)) {
       alert("Por favor ingrese un número de tarjeta válido de 16 dígitos.");
       return;
     }
 
-    if (!vencimiento) {
-      e.preventDefault();
+  if (!vencimiento) {
       alert("Ingrese la fecha de vencimiento de la tarjeta.");
       return;
     }
 
-    if (!cvvValido) {
-      e.preventDefault();
+    if (!/^\d{3,4}$/.test(cvv)) {
       alert("El CVV debe ser de 3 o 4 dígitos.");
       return;
     }
   }
 
-  //validar seleccion de tipo de tarjeta de credito
-  const metodo = document.querySelector('input[name="metodoPago"]:checked')?.value;
-if (metodo === "tarjeta") {
-  const tipoTarjeta = document.getElementById("tipoTarjeta").value;
-  if (!tipoTarjeta) {
-    e.preventDefault();
-    alert("Por favor seleccione el tipo de tarjeta.");
-    return;
-  }
-}
+  // Construir objeto de reserva
+  const reserva = {
+    paquete: document.getElementById("paquete").value,
+    nombre: document.getElementById("nombre").value,
+    correo: document.getElementById("correo").value,
+    telefono: document.getElementById("telefono").value,
+    fecha: document.getElementById("fecha").value,
+    hora: document.getElementById("hora").value,
+    cantidadInvitados: document.getElementById("invitados").value,
+    mensaje: document.getElementById("mensaje").value,
+    metodoPago: metodo,
+    tipoTarjeta: metodo === "tarjeta" ? tipoTarjeta : "",
+    paypalCorreo: metodo === "paypal" ? document.getElementById("paypalCorreo").value.trim() : "",
+    timestamp: new Date().toISOString(),
+  };
 
-  // Obtener datos del formulario
-const reserva = {
-  paquete: document.getElementById("paquete").value,
-  nombre: document.getElementById("nombre").value,
-  correo: document.getElementById("correo").value,
-  telefono: document.getElementById("telefono").value,
-  fecha: document.getElementById("fecha").value,
-  hora: document.getElementById("hora").value,
-  cantidadInvitados: document.getElementById("invitados").value,
-  mensaje: document.getElementById("mensaje").value,
-  metodoPago: metodo,
-  tipoTarjeta: metodo === "tarjeta" ? document.getElementById("tipoTarjeta").value : "",
-  timestamp: new Date().toISOString()
-};
+  // Guardar en historial
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!user) return;
 
-// Obtener usuario actual
-const user = JSON.parse(localStorage.getItem("loggedInUser"));
-if (!user) return; // Seguridad extra
+  const historialKey = `reservas_${user.email}`;
+  const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
+  historial.push(reserva);
+  localStorage.setItem(historialKey, JSON.stringify(historial));
 
-// Cargar historial del usuario
-const historialKey = `reservas_${user.email}`;
-const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
-
-// Agregar nueva reserva
-historial.push(reserva);
-localStorage.setItem(historialKey, JSON.stringify(historial));
-
-alert("¡Reserva enviada con éxito!");
-window.location.href = "PaquetesEvento.html";
-
+  alert("¡Reserva enviada con éxito!");
+  window.location.href = "PaquetesEvento.html";
 });

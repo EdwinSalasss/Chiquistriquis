@@ -78,25 +78,25 @@ form.addEventListener("submit", function (e) {
 if (valoraciones.length === 0) {
   const ejemplo = [
     {
-      usuario: "Sofía Gómez",
+      usuario: "Dayron Leonardo Lopez Guevara",
       comentario: "¡La decoración fue hermosa y el personal muy atento!",
       estrellas: 5,
       fecha: "2025-05-20T10:15:00"
     },
     {
-      usuario: "Carlos Rodríguez",
+      usuario: "Maxin Jesus Mendez Gonzales",
       comentario: "Todo salió bien, aunque el sonido podría mejorar.",
       estrellas: 4,
       fecha: "2025-05-18T14:30:00"
     },
     {
-      usuario: "Lucía Martínez",
+      usuario: "Angel Ramiro Barreto Peralta",
       comentario: "Excelente atención y puntualidad. Muy recomendado.",
       estrellas: 5,
       fecha: "2025-05-15T12:45:00"
     },
     {
-      usuario: "Andrés López",
+      usuario: "Jafet Alexander Gonzales Martinez",
       comentario: "El lugar es bonito pero el aire acondicionado falló un poco.",
       estrellas: 3,
       fecha: "2025-05-10T09:00:00"

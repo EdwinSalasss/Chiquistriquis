@@ -169,17 +169,18 @@ footer {
 }
 
 .valoraciones-link a {
-  font-size: 16px;
-  color: #666;
+  font-size: 18px; 
+  color: #333;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600; 
   transition: all 0.3s ease;
 }
 
 .valoraciones-link a:hover {
-  color: #272624;
+  color: #000;
   text-decoration: underline;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px; 
+
 }
 
 /*contactanos*/
