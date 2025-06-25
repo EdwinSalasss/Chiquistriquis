@@ -1,3 +1,11 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
 .logo-section {
   background: #fdfaec;
   text-align: center;
@@ -36,7 +44,7 @@
 
 .home {
   background: url("imagenes/home.jpeg") center/cover no-repeat;
-  height: 300px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,9 +273,9 @@
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  color: black !important; /* Mismo color que otros enlaces */
+  color: black !important;
   font-weight: bold;
-  padding: 5px 0; /* Ajuste vertical igual a otros items */
+  padding: 5px 0;
 }
 
 .login-icon {
@@ -304,7 +312,7 @@
 }
 
 .gallery-item {
-  aspect-ratio: 4 / 3; /* antes era 1 / 1 */
+  aspect-ratio: 4 / 3;
   border: 2px solid black; /* borde negro */
   border-radius: 6px;
   overflow: hidden;
@@ -347,9 +355,9 @@
 }
 
 .fullscreen-img {
-  aspect-ratio: 4 / 3; /* o 16/9 o 1/1 */
-  max-width: 90vw;
-  max-height: 90vh;
+  aspect-ratio: 4 / 3;
+  max-width: 89vw;
+  max-height: 89vh;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -364,19 +372,44 @@
   background: none;
   border: none;
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   z-index: 1001;
 }
 
 .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   color: white;
   font-size: 3rem;
   cursor: pointer;
-  padding: 0 1rem;
   z-index: 1001;
+  width: auto;
+  height: auto;
+  padding: 0 10%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+.nav-btn:hover {
+  opacity: 1;
+  color: #d4af37;
+  transform: translateY(-50%) scale(1.2);
 }
 
 .nav-btn:hover {
@@ -393,20 +426,20 @@
 }
 
 @media (max-width: 768px) {
-  .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  .home h1 {
+    font-size: 2rem;
   }
 
-  .prev-btn {
-    left: 10px;
+  .quienes-somos .contenido {
+    flex-direction: column;
   }
 
-  .next-btn {
-    right: 10px;
+  .quienes-somos img {
+    width: 100%;
+    max-width: 400px;
   }
 }
+
 button {
   background: linear-gradient(to bottom, #dcae2e, #b38947);
   color: white;
