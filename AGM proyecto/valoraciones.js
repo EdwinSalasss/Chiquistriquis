@@ -12,7 +12,7 @@ const estrellas = document.querySelectorAll("#estrellas span");
 let valorSeleccionado = 0;
 
 // Marcar estrellas seleccionadas
-estrellas.forEach(estrella => {
+estrellas.forEach((estrella) => {
   estrella.addEventListener("click", () => {
     valorSeleccionado = parseInt(estrella.getAttribute("data-star"));
     actualizarEstrellas();
@@ -20,7 +20,7 @@ estrellas.forEach(estrella => {
 });
 
 function actualizarEstrellas() {
-  estrellas.forEach(estrella => {
+  estrellas.forEach((estrella) => {
     const valor = parseInt(estrella.getAttribute("data-star"));
     estrella.classList.toggle("seleccionada", valor <= valorSeleccionado);
   });
@@ -37,13 +37,15 @@ function mostrarValoraciones() {
     return;
   }
 
-  valoraciones.forEach(v => {
+  valoraciones.forEach((v) => {
     const div = document.createElement("div");
     div.classList.add("valoracion");
 
     div.innerHTML = `
       <strong>${v.usuario}</strong>
-      <div class="estrellas-leidas">${'★'.repeat(v.estrellas)}${'☆'.repeat(5 - v.estrellas)}</div>
+      <div class="estrellas-leidas">${"★".repeat(v.estrellas)}${"☆".repeat(
+      5 - v.estrellas
+    )}</div>
       <p>${v.comentario}</p>
     `;
     listaValoraciones.appendChild(div);
@@ -63,7 +65,7 @@ form.addEventListener("submit", function (e) {
     usuario: user.name || "Anónimo",
     comentario,
     estrellas: valorSeleccionado,
-    fecha: new Date().toISOString()
+    fecha: new Date().toISOString(),
   };
 
   valoraciones.push(nueva);
@@ -81,26 +83,27 @@ if (valoraciones.length === 0) {
       usuario: "Dayron Leonardo Lopez Guevara",
       comentario: "¡La decoración fue hermosa y el personal muy atento!",
       estrellas: 5,
-      fecha: "2025-05-20T10:15:00"
+      fecha: "2025-05-20T10:15:00",
     },
     {
       usuario: "Maxin Jesus Mendez Gonzales",
       comentario: "Todo salió bien, aunque el sonido podría mejorar.",
       estrellas: 4,
-      fecha: "2025-05-18T14:30:00"
+      fecha: "2025-05-18T14:30:00",
     },
     {
       usuario: "Angel Ramiro Barreto Peralta",
       comentario: "Excelente atención y puntualidad. Muy recomendado.",
       estrellas: 5,
-      fecha: "2025-05-15T12:45:00"
+      fecha: "2025-05-15T12:45:00",
     },
     {
       usuario: "Jafet Alexander Gonzales Martinez",
-      comentario: "El lugar es bonito pero el aire acondicionado falló un poco.",
+      comentario:
+        "El lugar es bonito pero el aire acondicionado falló un poco.",
       estrellas: 3,
-      fecha: "2025-05-10T09:00:00"
-    }
+      fecha: "2025-05-10T09:00:00",
+    },
   ];
 
   localStorage.setItem("valoraciones", JSON.stringify(ejemplo));

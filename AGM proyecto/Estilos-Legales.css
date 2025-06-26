@@ -105,16 +105,35 @@ a:hover {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .contenido-legal {
-    padding: 0 15px;
-  }
-
-  .seccion-legal {
+@media (max-width: 768px) {
+  .cabecera {
     padding: 20px;
   }
 
   .cabecera h1 {
+    font-size: 1.8rem;
+  }
+
+  .contenido-legal {
+    padding: 20px;
+  }
+
+  .seccion-legal h2 {
+    font-size: 1.3rem;
+  }
+
+  .boton-volver {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecera h1 {
     font-size: 1.5rem;
+  }
+
+  .seccion-legal p,
+  .seccion-legal ul {
+    font-size: 14px;
   }
 }

@@ -140,7 +140,6 @@ button {
   margin-top: 20px;
   font-size: 16px;
   cursor: pointer;
-
 }
 
 button:hover {
@@ -157,7 +156,6 @@ button:hover {
   border-radius: 8px;
   font-weight: bold;
   text-align: center;
-
 }
 
 .back-button:hover {
@@ -170,4 +168,44 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
+}
+
+/* Responsive para reserva.html */
+@media (max-width: 768px) {
+  .form-section {
+    padding: 20px;
+  }
+
+  .card-type-options label img {
+    width: 40px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 8px;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-type-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-type-options label {
+    margin-bottom: 10px;
+  }
 }

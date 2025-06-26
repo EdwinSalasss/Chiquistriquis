@@ -9,7 +9,7 @@ body {
 .logo-section {
   background: #fdfaec;
   text-align: center;
-  padding: 20px 0;
+  padding: 9px 0;
 }
 
 .logo-section .logo img {
@@ -17,6 +17,10 @@ body {
   width: 200px;
   object-fit: contain;
 }
+
+/*#borde {
+  border: 5px solid hsl(49, 43%, 70%);
+}*/
 
 .nav-bar {
   background: #ccc;
@@ -49,7 +53,30 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-  filter: brightness(60%);
+  position: relative;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Ajusta este valor para cambiar la oscuridad del overlay */
+  z-index: 1;
+}
+
+.home h1 {
+  font-size: 3rem;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejor legibilidad */
 }
 
 .home img {
@@ -134,8 +161,8 @@ body {
 }
 
 /* paquete de eventos */
-.titulo-paquetes{
-margin-top: 60px;
+.titulo-paquetes {
+  margin-top: 60px;
   text-align: center;
   color: #181107;
   font-size: 32px;
@@ -208,7 +235,7 @@ margin-top: 60px;
 }
 
 .card button {
-  background: linear-gradient(to bottom, #dcae2e, #b38947);;
+  background: linear-gradient(to bottom, #dcae2e, #b38947);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -220,13 +247,13 @@ margin-top: 60px;
 }
 
 .card button:hover {
-  background: linear-gradient(to bottom, #b38947, #a67c00); ;
+  background: linear-gradient(to bottom, #b38947, #a67c00);
 }
 
 .valoraciones-link {
   text-align: center;
   margin: 40px auto 20px;
-max-width: 500px;
+  max-width: 500px;
 }
 
 .valoraciones-link button {
@@ -234,7 +261,7 @@ max-width: 500px;
   color: #fff;
   border: none;
   padding: 14px 28px;
-font-size: 18px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -243,10 +270,9 @@ font-size: 18px;
 }
 
 .valoraciones-link button:hover {
-  background: linear-gradient(to bottom, #b38947, #a67c00); 
+  background: linear-gradient(to bottom, #b38947, #a67c00);
   transform: translateY(-2px);
   letter-spacing: 1px;
-
 }
 /*contactanos*/
 
@@ -443,21 +469,6 @@ font-size: 18px;
   font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-  .home h1 {
-    font-size: 2rem;
-  }
-
-  .quienes-somos .contenido {
-    flex-direction: column;
-  }
-
-  .quienes-somos img {
-    width: 100%;
-    max-width: 400px;
-  }
-}
-
 #Button-more {
   background: linear-gradient(to bottom, #dcae2e, #b38947);
   color: white;
@@ -474,5 +485,61 @@ font-size: 18px;
 }
 
 #Button-more:hover {
-  background:linear-gradient(to bottom, #b38947, #a67c00); 
+  background: linear-gradient(to bottom, #b38947, #a67c00);
+}
+
+/* Responsive para index.html */
+@media (max-width: 992px) {
+  .nav-bar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .quienes-somos .contenido {
+    flex-direction: column;
+  }
+
+  .quienes-somos img {
+    width: 100%;
+    height: auto;
+  }
+
+  .simple-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .simple-gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .footer-content {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home h1 {
+    font-size: 1.8rem;
+  }
+
+  .nav-bar ul li a {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+
+  .logo-section .logo img {
+    height: 80px;
+    width: 150px;
+  }
 }

@@ -216,3 +216,40 @@
 .btn-historial:hover {
   background: linear-gradient(to bottom, #b38947, #a67c00);
 }
+
+/* Responsive para Sesion.html */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .tabs button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #title {
+    font-size: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
