@@ -1,0 +1,49 @@
+body {
+  background-color: #fdf9f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.paypal-container {
+  text-align: center;
+  padding: 30px;
+  border: 2px dashed #003087;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.paypal-container img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #003087;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #444;
+  font-size: 16px;
+}
+
+.spinner {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #003087;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
