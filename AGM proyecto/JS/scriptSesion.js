@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("loggedInUser", JSON.stringify(user));
       showLoggedInView(user);
       setTimeout(() => {
-        const returnUrl = localStorage.getItem("returnUrl") || "index.html";
+        const returnUrl =
+          localStorage.getItem("returnUrl") || "../HTML/index.html";
         window.location.href = returnUrl;
       }, 100);
     } else {

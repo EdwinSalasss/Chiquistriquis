@@ -39,7 +39,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background: url("imagenes/home.jpeg") center/cover no-repeat;
+  background: url("../imagenes/home.jpeg") center/cover no-repeat;
   background-size: cover;
   background-position: center;
   color: white;

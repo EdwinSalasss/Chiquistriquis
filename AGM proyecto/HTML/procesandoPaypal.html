@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procesando Pago con PayPal</title>
+    <link rel="stylesheet" href="../CSS/procesandoPaypal.css" />
+  </head>
+  <body>
+    <div class="paypal-container" id="container">
+      <img
+        src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg"
+        alt="PayPal Logo"
+        id="logo"
+      />
+      <h2 id="titulo">Procesando con PayPal...</h2>
+      <p id="mensaje">
+        Estamos confirmando tu reserva. Por favor, espera un momento.
+      </p>
+      <div class="spinner" id="spinner"></div>
+    </div>
+
+    <audio
+      id="sonidoExito"
+      src="https://cdn.pixabay.com/download/audio/2022/10/01/audio_3a0d2f07c2.mp3?filename=success-1-6297.mp3"
+    ></audio>
+
+    <script>
+      const reserva = JSON.parse(localStorage.getItem("reservaTemporal"));
+      const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+      if (user && reserva) {
+        const historialKey = `reservas_${user.email}`;
+        const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
+        historial.push(reserva);
+        localStorage.setItem(historialKey, JSON.stringify(historial));
+        localStorage.removeItem("reservaTemporal");
+      }
+
+      // Mostrar animación y luego éxito
+      setTimeout(() => {
+        document.getElementById("spinner").style.display = "none";
+        document.getElementById("titulo").textContent = "¡Reserva Confirmada!";
+        document.getElementById("mensaje").textContent =
+          "Tu pago ha sido procesado con éxito.";
+        document.getElementById("logo").src =
+          "https://cdn-icons-png.flaticon.com/512/148/148767.png";
+        document.getElementById("sonidoExito").play();
+      }, 3500);
+
+      setTimeout(() => {
+        window.location.href = "PaquetesEvento.html";
+      }, 6000);
+    </script>
+  </body>
+</html>

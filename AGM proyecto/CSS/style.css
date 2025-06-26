@@ -47,7 +47,7 @@ body {
 }
 
 .home {
-  background: url("imagenes/home.jpeg") center/cover no-repeat;
+  background: url("../imagenes/home.jpeg") center/cover no-repeat;
   height: 250px;
   display: flex;
   align-items: center;
