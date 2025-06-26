@@ -123,6 +123,32 @@ function setupImageGallery() {
   }
 }
 
+function setupLoadMoreButton() {
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  if (!loadMoreBtn) return;
+
+  loadMoreBtn.addEventListener("click", function () {
+    // Simular carga de más elementos
+    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Cargando...';
+
+    // Simular retraso de red
+    setTimeout(() => {
+      // Aquí iría la lógica para cargar más imágenes
+      // Por ahora solo mostramos un mensaje
+      alert("Se cargarían más eventos en una implementación real");
+
+      // Restaurar el botón
+      this.innerHTML = '<i class="fas fa-plus-circle"></i> Cargar más eventos';
+
+      // Agregar animación de confirmación
+      this.classList.add("animate__animated", "animate__pulse");
+      setTimeout(() => {
+        this.classList.remove("animate__animated", "animate__pulse");
+      }, 1000);
+    }, 1500);
+  });
+}
+
 function setupTestimonials() {
   const testimonialItems = document.querySelectorAll(".testimonial-item");
   if (testimonialItems.length === 0) return;

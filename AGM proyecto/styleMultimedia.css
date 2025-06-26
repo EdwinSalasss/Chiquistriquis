@@ -324,6 +324,17 @@ body {
   color: #ddd;
 }
 
+.footer a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #d4af37;
+  text-decoration: underline;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
