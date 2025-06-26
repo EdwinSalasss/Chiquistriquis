@@ -139,7 +139,7 @@ body {
 
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 90%; /* 16:9 Aspect Ratio */
   height: 0;
   overflow: hidden;
   border-radius: 12px 12px 0 0;
@@ -452,16 +452,19 @@ button {
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 30px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-right: 10px;
   transition: all 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcae2e;
+}
+
+button:hover {
+background: linear-gradient(to bottom, #b38947, #a67c00);
+
 }
 
 

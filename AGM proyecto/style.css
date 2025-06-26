@@ -451,7 +451,7 @@ body {
   }
 }
 
-button {
+#Button-more {
   background: linear-gradient(to bottom, #dcae2e, #b38947);
   color: white;
   border: none;
@@ -466,7 +466,6 @@ button {
   border: 1px solid #dcae2e;
 }
 
-button:hover {
-background: linear-gradient(to bottom, #b38947, #a67c00);
-
+#Button-more:hover {
+  background: linear-gradient(to bottom, #b38947, #a67c00);
 }
