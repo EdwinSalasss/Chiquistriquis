@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #fffaf0, #f6e9c4);
+  min-height: 100vh;
+}
+
+.perfil-section {
+  max-width: 700px;
+  margin: auto;
+  padding: 50px 30px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #6c4c1b;
+}
+
+.contenedor-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.password-view-group .password-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.password-view-group input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.toggle-password {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+  transition: transform 0.2s;
+}
+
+.toggle-password:hover {
+  transform: scale(1.1);
+}
+
+.campo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.campo input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fffdf4;
+  font-size: 16px;
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.acciones button {
+  background: linear-gradient(to right, #dcae2e, #b38947);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.acciones button:hover {
+  background: linear-gradient(to right, #b38947, #a67c00);
+}
+
+.acciones .cancelar {
+  text-decoration: none;
+  color: #6c4c1b;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: 2px solid #b38947;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.acciones .cancelar:hover {
+  background-color: #f4e1b8;
+  color: #a67c00;
+}
