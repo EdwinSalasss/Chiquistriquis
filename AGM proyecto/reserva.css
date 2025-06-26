@@ -1,6 +1,6 @@
 /* reserva.css */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #fdf9f0;
   margin: 0;
   padding: 0;
@@ -14,10 +14,19 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 40px;
-  max-width: 600px;
+  max-width: 900px;
   width: 95%;
   margin: 40px auto;
   flex: 1;
+}
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
 }
 
 .logo-container {

@@ -1,77 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Historial de Reservas</title>
-  <link rel="stylesheet" href="historial.css" />
-</head>
-<body>
-  <div class="container">
-    <h2>Historial de Reservas</h2>
-    <ul id="listaHistorial"></ul>
-    <a href="index.html" class="back-button">← Volver al inicio</a>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historial - Casa Eventos Santana</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="historial.css" />
+  </head>
+  <body class="Home">
+    <section class="logo-section">
+      <div class="logo">
+        <img src="imagenes/logo.jpeg" alt="Casa Eventos Santana" id="borde" />
+      </div>
+    </section>
 
-  <<script>
-  const user = JSON.parse(localStorage.getItem("loggedInUser"));
-  if (!user) {
-    alert("Debe iniciar sesión para ver su historial.");
-    window.location.href = "Sesion.html";
-  } else {
-    const historialKey = `reservas_${user.email}`;
-    const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
-    const lista = document.getElementById("listaHistorial");
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <a href="index.html">
+            <img src="imagenes/Home.png" alt="Home" id="login-icon-home" />
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="PaquetesEvento.html">
+            <img src="imagenes/Evento.png" id="login-icon-evento" />
+            Paquetes de Eventos
+          </a>
+        </li>
+        <li>
+          <a href="contactanos.html">
+            <img src="imagenes/Contacto.png" id="login-icon-contactos" />
+            Contáctanos
+          </a>
+        </li>
+        <li>
+          <a href="historial.html" class="active">
+            <img src="imagenes/Reservas.png" id="login-icon-reservas" />
+            Historial de Reservas
+          </a>
+        </li>
+        <li>
+          <a href="Sesion.html" id="login-nav-link">
+            <img src="imagenes/pngwing.com.png" id="login-icon-cuenta" />
+            <span id="login-text"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    function renderHistorial() {
-      lista.innerHTML = "";
+    <div class="historial-container">
+      <h2>Historial de Reservas</h2>
+      <ul id="listaHistorial"></ul>
+      <a href="index.html" class="back-button">← Volver al inicio</a>
+    </div>
 
-      if (historial.length === 0) {
-        lista.innerHTML = "<li>No hay reservas registradas.</li>";
-        return;
-      }
+    <footer class="footer animate__animated animate__fadeInUp">
+      <div class="footer-content">
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/share/16YLE1FnC4/"
+            class="animate__animated animate__bounceIn"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/casaeventos.santana?igsh=Mzdoc29zMm40bjNs"
+            class="animate__animated animate__bounceIn animate__delay-1s"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="#"
+            class="animate__animated animate__bounceIn animate__delay-2s"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        <p>© 2025 Casa Eventos Santana. Todos los derechos reservados.</p>
+        <p>
+          <a href="Politicas-Privacidad.html">Política de privacidad</a> |
+          <a href="Terminos-Condiciones.html">Términos y condiciones</a>
+        </p>
+        <p>Contacto: 2225-22347 | Email: CasaEvento@gmail.com</p>
+      </div>
+    </footer>
 
-      historial.forEach((reserva, index) => {
-        const item = document.createElement("li");
-        const metodoPago = reserva.metodoPago === "paypal"
-          ? "PayPal"
-          : reserva.metodoPago === "tarjeta"
-          ? `Tarjeta de Crédito (${reserva.tipoTarjeta || "No especificada"})`
-          : "No especificado";
+    <script>
+      // Mismo script para el nombre de usuario
+      document.addEventListener("DOMContentLoaded", function () {
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        const loginText = document.getElementById("login-text");
 
-        item.innerHTML = `
-          <strong>Paquete:</strong> ${reserva.paquete} <br>
-          <strong>Fecha:</strong> ${reserva.fecha} a las ${reserva.hora || "Hora no especificada"}<br>
-          <strong>Nombre:</strong> ${reserva.nombre}<br>
-          <strong>Correo:</strong> ${reserva.correo}<br>
-          <strong>Teléfono:</strong> ${reserva.telefono}<br>
-          <strong>Cantidad de invitados:</strong> ${reserva.cantidadInvitados || "No especificado"}<br>
-          <strong>Método de Pago:</strong> ${metodoPago}<br>
-          ${reserva.metodoPago === "paypal" && reserva.paypalCorreo
-            ? `<strong>Correo PayPal:</strong> ${reserva.paypalCorreo}<br>`
-            : ""}
-          <strong>Mensaje:</strong> ${reserva.mensaje || "N/A"}<br>
-          <button class="cancel-button" data-index="${index}">Cancelar Reserva</button>
-          <hr>
-        `;
-        lista.appendChild(item);
+        if (loggedInUser) {
+          const fullName = loggedInUser.name;
+          const firstName = fullName.split(" ")[0];
+          loginText.textContent = firstName;
+        } else {
+          alert("Debe iniciar sesión para ver su historial.");
+          window.location.href = "Sesion.html";
+        }
       });
 
-      // Asignar eventos a todos los botones
-      document.querySelectorAll(".cancel-button").forEach(button => {
-        button.addEventListener("click", function () {
-          const index = this.dataset.index;
-          const confirmar = confirm("¿Estás seguro de que deseas cancelar esta reserva?");
-          if (confirmar) {
-            historial.splice(index, 1);
-            localStorage.setItem(historialKey, JSON.stringify(historial));
-            renderHistorial();
+      // Script original del historial (sin cambios)
+      const user = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (user) {
+        const historialKey = `reservas_${user.email}`;
+        const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
+        const lista = document.getElementById("listaHistorial");
+
+        function renderHistorial() {
+          lista.innerHTML = "";
+
+          if (historial.length === 0) {
+            lista.innerHTML = "<li>No hay reservas registradas.</li>";
+            return;
           }
-        });
-      });
-    }
 
-    renderHistorial();
-  }
-</script>
-</body>
+          historial.forEach((reserva, index) => {
+            const item = document.createElement("li");
+            const metodoPago =
+              reserva.metodoPago === "paypal"
+                ? "PayPal"
+                : reserva.metodoPago === "tarjeta"
+                ? `Tarjeta de Crédito (${
+                    reserva.tipoTarjeta || "No especificada"
+                  })`
+                : "No especificado";
+
+            item.innerHTML = `
+            <div class="reserva-card">
+              <strong>Paquete:</strong> ${reserva.paquete} <br>
+              <strong>Fecha:</strong> ${reserva.fecha} a las ${
+              reserva.hora || "Hora no especificada"
+            }<br>
+              <strong>Nombre:</strong> ${reserva.nombre}<br>
+              <strong>Correo:</strong> ${reserva.correo}<br>
+              <strong>Teléfono:</strong> ${reserva.telefono}<br>
+              <strong>Invitados:</strong> ${
+                reserva.cantidadInvitados || "No especificado"
+              }<br>
+              <strong>Pago:</strong> ${metodoPago}<br>
+              ${
+                reserva.metodoPago === "paypal" && reserva.paypalCorreo
+                  ? `<strong>Correo PayPal:</strong> ${reserva.paypalCorreo}<br>`
+                  : ""
+              }
+              <strong>Mensaje:</strong> ${reserva.mensaje || "N/A"}<br>
+              <button class="cancel-button" data-index="${index}">Cancelar Reserva</button>
+            </div>
+          `;
+            lista.appendChild(item);
+          });
+
+          document.querySelectorAll(".cancel-button").forEach((button) => {
+            button.addEventListener("click", function () {
+              const index = this.dataset.index;
+              const confirmar = confirm(
+                "¿Estás seguro de que deseas cancelar esta reserva?"
+              );
+              if (confirmar) {
+                historial.splice(index, 1);
+                localStorage.setItem(historialKey, JSON.stringify(historial));
+                renderHistorial();
+              }
+            });
+          });
+        }
+        renderHistorial();
+      }
+    </script>
+  </body>
 </html>

@@ -322,24 +322,67 @@ body {
   padding: 5px 0;
 }
 
-.login-icon {
-  width: 18px;
-  height: 18px;
+#login-icon-home {
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   vertical-align: middle;
-  filter: brightness(0); /* Para que el icono sea negro */
+  filter: brightness(0);
   transition: all 0.2s ease;
 }
+#login-icon-evento {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: brightness(0);
+}
 
-.login-nav-link:hover .login-icon {
+#login-icon-contactos {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: brightness(0);
+}
+#login-icon-reservas {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: brightness(0);
+}
+
+#login-icon-cuenta {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: brightness(0);
+}
+
+.login-nav-link:hover #login-icon-home {
+  filter: brightness(0.7); /* Efecto hover sutil */
+}
+.login-nav-link:hover #login-icon-home {
   filter: brightness(0.7); /* Efecto hover sutil */
 }
 
 /* Asegurar que todos los items del nav tengan el mismo espaciado */
-.nav-bar ul li a {
+.nav-bar ul li {
   padding: 8px 0;
   display: inline-block;
 }
+.nav-bar a {
+  padding: 10px 0;
+  display: inline-block;
+  position: center;
+}
+
+.nav-bar img {
+  position: center;
+}
+
 .nav-bar a.active {
   color: #d4af37;
   border-bottom: 2px solid #d4af37;
