@@ -52,6 +52,11 @@ body {
   filter: brightness(60%);
 }
 
+.home img {
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
 .home h1 {
   font-size: 3rem;
 }
