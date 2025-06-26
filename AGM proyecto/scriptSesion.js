@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "register-confirm-password"
     ).value;
 
-    const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]{1,10}$/;
+    const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]{1,20}$/;
     let isValid = true;
 
     // Función para validar campos de nombre
@@ -171,35 +171,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Botones de cancelar
   loginCancelBtn.addEventListener("click", function () {
-  const returnUrl = localStorage.getItem("returnUrl");
-  
-  // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
-  if (
-  returnUrl &&
-  (returnUrl.includes("reserva.html") || returnUrl.includes("valoraciones.html") || returnUrl.includes("historial.html"))
-) {
-  localStorage.removeItem("returnUrl");
-  window.location.href = "index.html";
-} else {
-  window.location.href = returnUrl || document.referrer || "index.html";
-}
-});
+    const returnUrl = localStorage.getItem("returnUrl");
 
+    // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
+    if (
+      returnUrl &&
+      (returnUrl.includes("reserva.html") ||
+        returnUrl.includes("valoraciones.html") ||
+        returnUrl.includes("historial.html"))
+    ) {
+      localStorage.removeItem("returnUrl");
+      window.location.href = "index.html";
+    } else {
+      window.location.href = returnUrl || document.referrer || "index.html";
+    }
+  });
 
   registerCancelBtn.addEventListener("click", function () {
-   const returnUrl = localStorage.getItem("returnUrl");
-  
-  // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
- if (
-  returnUrl &&
-  (returnUrl.includes("reserva.html") || returnUrl.includes("valoraciones.html") || returnUrl.includes("historial.html"))
-) {
-  localStorage.removeItem("returnUrl");
-  window.location.href = "index.html";
-} else {
-  window.location.href = returnUrl || document.referrer || "index.html";
-}
-});
+    const returnUrl = localStorage.getItem("returnUrl");
+
+    // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
+    if (
+      returnUrl &&
+      (returnUrl.includes("reserva.html") ||
+        returnUrl.includes("valoraciones.html") ||
+        returnUrl.includes("historial.html"))
+    ) {
+      localStorage.removeItem("returnUrl");
+      window.location.href = "index.html";
+    } else {
+      window.location.href = returnUrl || document.referrer || "index.html";
+    }
+  });
 
   // Botón de cerrar sesión
   logoutBtn.addEventListener("click", function () {
@@ -211,34 +214,36 @@ document.addEventListener("DOMContentLoaded", function () {
     title.textContent = "Iniciar Sesión";
     loginForm.reset();
     registerForm.reset();
-    
-    //para que no lleve a paginas protegidas
-  if (
-  returnUrl.includes("reserva.html") ||
-  returnUrl.includes("valoraciones.html")||
-  returnUrl.includes("historial.html")
-) {
-  returnUrl = "index.html";
-}
 
-localStorage.removeItem("returnUrl");
-window.location.href = returnUrl;
+    //para que no lleve a paginas protegidas
+    if (
+      returnUrl.includes("reserva.html") ||
+      returnUrl.includes("valoraciones.html") ||
+      returnUrl.includes("historial.html")
+    ) {
+      returnUrl = "index.html";
+    }
+
+    localStorage.removeItem("returnUrl");
+    window.location.href = returnUrl;
   });
 
   // Botón de cerrar (×)
   closeBtn.addEventListener("click", function () {
-     returnUrl = localStorage.getItem("returnUrl");
-  
-  // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
-  if (
-  returnUrl &&
-  (returnUrl.includes("reserva.html") || returnUrl.includes("valoraciones.html") || returnUrl.includes("historial.html"))
-) {
-  localStorage.removeItem("returnUrl");
-  window.location.href = "index.html";
-} else {
-  window.location.href = returnUrl || document.referrer || "index.html";
-}
+    returnUrl = localStorage.getItem("returnUrl");
+
+    // Si la URL guardada nos regresa a reserva.html (protegida) sin sesión, redirige a inicio
+    if (
+      returnUrl &&
+      (returnUrl.includes("reserva.html") ||
+        returnUrl.includes("valoraciones.html") ||
+        returnUrl.includes("historial.html"))
+    ) {
+      localStorage.removeItem("returnUrl");
+      window.location.href = "index.html";
+    } else {
+      window.location.href = returnUrl || document.referrer || "index.html";
+    }
   });
 
   // Mostrar vista de usuario logueado
@@ -282,27 +287,25 @@ window.location.href = returnUrl;
     localStorage.setItem("returnUrl", document.referrer);
   }
 
+  // Mostrar mensaje si viene de intento de reserva
+  const loginMsg = localStorage.getItem("loginMessage");
+  if (loginMsg) {
+    const mensajeDiv = document.createElement("div");
+    mensajeDiv.textContent = loginMsg;
+    mensajeDiv.style.background = "#fff3cd";
+    mensajeDiv.style.color = "#856404";
+    mensajeDiv.style.padding = "10px 15px";
+    mensajeDiv.style.border = "1px solidrgb(151, 125, 47)";
+    mensajeDiv.style.borderRadius = "5px";
+    mensajeDiv.style.marginBottom = "15px";
+    mensajeDiv.style.textAlign = "center";
+    mensajeDiv.style.fontWeight = "bold";
 
+    // Insertar antes del formulario
+    const contenedor = document.querySelector(".tab-content") || document.body;
+    contenedor.insertBefore(mensajeDiv, contenedor.firstChild);
 
- // Mostrar mensaje si viene de intento de reserva
-const loginMsg = localStorage.getItem("loginMessage");
-if (loginMsg) {
-  const mensajeDiv = document.createElement("div");
-  mensajeDiv.textContent = loginMsg;
-  mensajeDiv.style.background = "#fff3cd";
-  mensajeDiv.style.color = "#856404";
-  mensajeDiv.style.padding = "10px 15px";
-  mensajeDiv.style.border = "1px solidrgb(151, 125, 47)";
-  mensajeDiv.style.borderRadius = "5px";
-  mensajeDiv.style.marginBottom = "15px";
-  mensajeDiv.style.textAlign = "center";
-  mensajeDiv.style.fontWeight = "bold";
-
-  // Insertar antes del formulario
-  const contenedor = document.querySelector(".tab-content") || document.body;
-  contenedor.insertBefore(mensajeDiv, contenedor.firstChild);
-
-  // Limpiar para que no aparezca otra vez
-  localStorage.removeItem("loginMessage");
-}
+    // Limpiar para que no aparezca otra vez
+    localStorage.removeItem("loginMessage");
+  }
 });
