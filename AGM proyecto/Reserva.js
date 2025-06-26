@@ -203,6 +203,12 @@ const añoSeleccionado = fechaSeleccionada.getFullYear();
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
   if (!user) return;
 
+  if (metodo === "paypal") 
+    {
+  localStorage.setItem("reservaTemporal", JSON.stringify(reserva));
+  window.location.href = "procesandoPaypal.html";
+    } 
+  else {
   const historialKey = `reservas_${user.email}`;
   const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
   historial.push(reserva);
@@ -210,4 +216,5 @@ const añoSeleccionado = fechaSeleccionada.getFullYear();
 
   alert("¡Reserva enviada con éxito!");
   window.location.href = "PaquetesEvento.html";
+}
 });

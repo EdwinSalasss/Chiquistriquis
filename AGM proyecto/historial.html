@@ -12,45 +12,66 @@
     <a href="index.html" class="back-button">← Volver al inicio</a>
   </div>
 
-  <script>
-    const user = JSON.parse(localStorage.getItem("loggedInUser"));
-    if (!user) {
-      alert("Debe iniciar sesión para ver su historial.");
-      window.location.href = "Sesion.html";
-    } else {
-      const historialKey = `reservas_${user.email}`;
-      const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
-      const lista = document.getElementById("listaHistorial");
+  <<script>
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!user) {
+    alert("Debe iniciar sesión para ver su historial.");
+    window.location.href = "Sesion.html";
+  } else {
+    const historialKey = `reservas_${user.email}`;
+    const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
+    const lista = document.getElementById("listaHistorial");
+
+    function renderHistorial() {
+      lista.innerHTML = "";
 
       if (historial.length === 0) {
         lista.innerHTML = "<li>No hay reservas registradas.</li>";
-      } else {
-
-        historial.forEach(reserva => {
-          const item = document.createElement("li");
-          const metodoPago = reserva.metodoPago === "paypal"
-         ? "PayPal"
-         : reserva.metodoPago === "tarjeta"
-         ? `Tarjeta de Crédito (${reserva.tipoTarjeta || "No especificada"})`
-      : "No especificado";
-
-          item.innerHTML = `
-            <strong>Paquete:</strong> ${reserva.paquete} <br>
-            <strong>Fecha:</strong> ${reserva.fecha} a las ${reserva.hora || "Hora no especificada"}<br>
-            <strong>Nombre:</strong> ${reserva.nombre}<br>
-            <strong>Correo:</strong> ${reserva.correo}<br>
-            <strong>Teléfono:</strong> ${reserva.telefono}<br>
-            <strong>Cantidad de invitados:</strong> ${reserva.cantidadInvitados || "No especificado"}<br>
-            <strong>Método de Pago:</strong> ${metodoPago}<br>
-         ${reserva.metodoPago === "paypal" && reserva.paypalCorreo
-          ? `<strong>Correo PayPal:</strong> ${reserva.paypalCorreo}<br>`
-    : ""}
-            <strong>Mensaje:</strong> ${reserva.mensaje || "N/A"}<br>
-                        <hr>`;
-          lista.appendChild(item);
-        });
+        return;
       }
+
+      historial.forEach((reserva, index) => {
+        const item = document.createElement("li");
+        const metodoPago = reserva.metodoPago === "paypal"
+          ? "PayPal"
+          : reserva.metodoPago === "tarjeta"
+          ? `Tarjeta de Crédito (${reserva.tipoTarjeta || "No especificada"})`
+          : "No especificado";
+
+        item.innerHTML = `
+          <strong>Paquete:</strong> ${reserva.paquete} <br>
+          <strong>Fecha:</strong> ${reserva.fecha} a las ${reserva.hora || "Hora no especificada"}<br>
+          <strong>Nombre:</strong> ${reserva.nombre}<br>
+          <strong>Correo:</strong> ${reserva.correo}<br>
+          <strong>Teléfono:</strong> ${reserva.telefono}<br>
+          <strong>Cantidad de invitados:</strong> ${reserva.cantidadInvitados || "No especificado"}<br>
+          <strong>Método de Pago:</strong> ${metodoPago}<br>
+          ${reserva.metodoPago === "paypal" && reserva.paypalCorreo
+            ? `<strong>Correo PayPal:</strong> ${reserva.paypalCorreo}<br>`
+            : ""}
+          <strong>Mensaje:</strong> ${reserva.mensaje || "N/A"}<br>
+          <button class="cancel-button" data-index="${index}">Cancelar Reserva</button>
+          <hr>
+        `;
+        lista.appendChild(item);
+      });
+
+      // Asignar eventos a todos los botones
+      document.querySelectorAll(".cancel-button").forEach(button => {
+        button.addEventListener("click", function () {
+          const index = this.dataset.index;
+          const confirmar = confirm("¿Estás seguro de que deseas cancelar esta reserva?");
+          if (confirmar) {
+            historial.splice(index, 1);
+            localStorage.setItem(historialKey, JSON.stringify(historial));
+            renderHistorial();
+          }
+        });
+      });
     }
-  </script>
+
+    renderHistorial();
+  }
+</script>
 </body>
 </html>
