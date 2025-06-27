@@ -19,27 +19,36 @@
           <input type="email" id="correo" readonly />
         </div>
         <div class="form-group password-view-group">
-  <label for="current-password">Contraseña actual:</label>
-  <div class="password-wrapper">
-    <input
-      type="password"
-      id="current-password"
-      value="********"
-      readonly
-    />
-    <button
-      type="button"
-      class="toggle-password"
-      onclick="togglePasswordVisibility()"
-      aria-label="Mostrar/Ocultar contraseña"
-    >
-      <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#555" viewBox="0 0 24 24">
-        <path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/>
-        <circle cx="12" cy="12" r="2.5"/>
-      </svg>
-    </button>
-  </div>
-</div>
+          <label for="current-password">Contraseña actual:</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="current-password"
+              value="********"
+              readonly
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              onclick="togglePasswordVisibility()"
+              aria-label="Mostrar/Ocultar contraseña"
+            >
+              <svg
+                id="eye-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="#555"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"
+                />
+                <circle cx="12" cy="12" r="2.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
         <div class="campo">
           <label for="nuevaPassword">Nueva Contraseña</label>
           <input

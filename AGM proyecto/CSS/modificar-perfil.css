@@ -96,7 +96,7 @@ h1 {
 }
 
 .acciones button:hover {
-  background: linear-gradient(to right, #b38947, #a67c00);
+  background: (to right, #b38947, #a67c00);
 }
 
 .acciones .cancelar {
