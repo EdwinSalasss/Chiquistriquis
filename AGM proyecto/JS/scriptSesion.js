@@ -164,8 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     alert("¡Registro exitoso! Serás redirigido a la página principal.");
     setTimeout(() => {
-      const returnUrl = localStorage.getItem("returnUrl") || "index.html";
-      window.location.href = returnUrl;
+     window.location.href = "index.html";
     }, 1000);
   });
 
